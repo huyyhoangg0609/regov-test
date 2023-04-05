@@ -1,0 +1,30 @@
+version: '2'
+services:
+  issuer:
+    build:
+      context: ./weidy
+    image: weidy
+    container_name: issuer-agent
+    ports:
+      - 9000:9000
+      - 8880:8888
+  holder:
+    build:
+      context: ./weidy
+    image: weidy
+    container_name: holder-agent
+    ports:
+      - 9001:9000
+      - 8081:8888
+
+  verifier:
+    build:
+      context: ./weidy
+    image: weidy
+    container_name: verifier-agent
+    ports:
+      - 9002:9000
+      - 8082:8888
+    
+
+
