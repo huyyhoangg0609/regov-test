@@ -15,7 +15,7 @@ export class IssuerService {
         console.log(schemaInput.name)
         const schemaTemplate: SchemaTemplate = {
             name: schemaInput.name,
-            version: '1.0',
+            version: '1.2',
             attributes: ['name', 'age', 'country'],
         };
         const schema = await issuer.agent.ledger.registerSchema(schemaTemplate).catch(e => {

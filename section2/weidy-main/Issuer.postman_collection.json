@@ -56,13 +56,34 @@
 			"response": []
 		},
 		{
-			"name": "03-Create Schema",
+			"name": "03-Create Invitation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{issuer_app_port}}/session/invitation/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{issuer_app_port}}",
+					"path": [
+						"session",
+						"invitation",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05-Create Schema",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\":\"schema-1\",\n    \"version\":1.0,\n    \"attributes\":[\"name\",\"age\",\"country\"]\n}",
+					"raw": "{\n    \"name\":\"schema-2\",\n    \"version\":1.1,\n    \"attributes\":[\"name\",\"age\",\"country\"]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -86,27 +107,6 @@
 			"response": []
 		},
 		{
-			"name": "04-Create Invitation",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:{{issuer_app_port}}/session/invitation/create",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "{{issuer_app_port}}",
-					"path": [
-						"session",
-						"invitation",
-						"create"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "06-Create & Offer Creadential",
 			"request": {
 				"method": "POST",
@@ -121,7 +121,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:{{issuer_app_port}}/issuer/credential/offer?cred-def-id=LJk1HdDk7uYj6aZb9qWuHF:2:schema-1:1.0",
+					"raw": "http://localhost:{{issuer_app_port}}/issuer/credential/offer?cred-def-id=LJk1HdDk7uYj6aZb9qWuHF:3:CL:753740:CI1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -135,7 +135,7 @@
 					"query": [
 						{
 							"key": "cred-def-id",
-							"value": "LJk1HdDk7uYj6aZb9qWuHF:2:schema-1:1.0"
+							"value": "LJk1HdDk7uYj6aZb9qWuHF:3:CL:753740:CI1"
 						}
 					]
 				}

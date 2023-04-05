@@ -82,20 +82,21 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:{{verifier_app_port}}/request/create?cred-def-id=123",
+					"raw": "http://localhost:{{verifier_app_port}}/verifier/request/create?cred-def-id=LJk1HdDk7uYj6aZb9qWuHF:3:CL:753740:CI1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "{{verifier_app_port}}",
 					"path": [
+						"verifier",
 						"request",
 						"create"
 					],
 					"query": [
 						{
 							"key": "cred-def-id",
-							"value": "123"
+							"value": "LJk1HdDk7uYj6aZb9qWuHF:3:CL:753740:CI1"
 						}
 					]
 				}
@@ -108,20 +109,21 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:{{verifier_app_port}}/proof/verify?proof-id",
+					"raw": "http://localhost:{{verifier_app_port}}/verifier/proof/verify?proof-id=",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "{{verifier_app_port}}",
 					"path": [
+						"verifier",
 						"proof",
 						"verify"
 					],
 					"query": [
 						{
 							"key": "proof-id",
-							"value": null
+							"value": ""
 						}
 					]
 				}

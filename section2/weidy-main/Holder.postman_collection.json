@@ -56,12 +56,12 @@
 			"response": []
 		},
 		{
-			"name": "05/10-Accept Invitation",
+			"name": "04/10-Accept Invitation",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:{{holder_app_port}}/session/invitation/accept?invitation-url=http://localhost:9000?oob=eyJAdHlwZSI6Imh0dHBzOi8vZGlkY29tbS5vcmcvb3V0LW9mLWJhbmQvMS4xL2ludml0YXRpb24iLCJAaWQiOiI5ZDYyZTk3ZC1jNDA0LTQ4OWItYjY4MS0yYWM3MTYzNzE1MWQiLCJsYWJlbCI6Imlzc3VlciIsImFjY2VwdCI6WyJkaWRjb21tL2FpcDEiLCJkaWRjb21tL2FpcDI7ZW52PXJmYzE5Il0sImhhbmRzaGFrZV9wcm90b2NvbHMiOlsiaHR0cHM6Ly9kaWRjb21tLm9yZy9kaWRleGNoYW5nZS8xLjAiLCJodHRwczovL2RpZGNvbW0ub3JnL2Nvbm5lY3Rpb25zLzEuMCJdLCJzZXJ2aWNlcyI6W3siaWQiOiIjaW5saW5lLTAiLCJzZXJ2aWNlRW5kcG9pbnQiOiJodHRwOi8vbG9jYWxob3N0OjkwMDAiLCJ0eXBlIjoiZGlkLWNvbW11bmljYXRpb24iLCJyZWNpcGllbnRLZXlzIjpbImRpZDprZXk6ejZNa2VwbXNmdDhNNkJOUXM2SzliNTJjR2tXTWRHQjN6ekZHSk43SGIzdUt3dnpzIl0sInJvdXRpbmdLZXlzIjpbXX1dfQ",
+					"raw": "http://localhost:{{holder_app_port}}/session/invitation/accept?invitation-url=http://localhost:9002?oob=eyJAdHlwZSI6Imh0dHBzOi8vZGlkY29tbS5vcmcvb3V0LW9mLWJhbmQvMS4xL2ludml0YXRpb24iLCJAaWQiOiJiMzc2MGZmOC04YzVjLTQ1OTItYTMzMy03N2FlZDlmODAwNDkiLCJsYWJlbCI6InZlcmlmaWVyIiwiYWNjZXB0IjpbImRpZGNvbW0vYWlwMSIsImRpZGNvbW0vYWlwMjtlbnY9cmZjMTkiXSwiaGFuZHNoYWtlX3Byb3RvY29scyI6WyJodHRwczovL2RpZGNvbW0ub3JnL2RpZGV4Y2hhbmdlLzEuMCIsImh0dHBzOi8vZGlkY29tbS5vcmcvY29ubmVjdGlvbnMvMS4wIl0sInNlcnZpY2VzIjpbeyJpZCI6IiNpbmxpbmUtMCIsInNlcnZpY2VFbmRwb2ludCI6Imh0dHA6Ly9sb2NhbGhvc3Q6OTAwMiIsInR5cGUiOiJkaWQtY29tbXVuaWNhdGlvbiIsInJlY2lwaWVudEtleXMiOlsiZGlkOmtleTp6Nk1rbmFLdGpyblpacFNwbnF1NnVMRHJYNTFob01jSnN4Rm94dWNNV3hTUDZoSkYiXSwicm91dGluZ0tleXMiOltdfV19",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -75,7 +75,7 @@
 					"query": [
 						{
 							"key": "invitation-url",
-							"value": "http://localhost:9000?oob=eyJAdHlwZSI6Imh0dHBzOi8vZGlkY29tbS5vcmcvb3V0LW9mLWJhbmQvMS4xL2ludml0YXRpb24iLCJAaWQiOiI5ZDYyZTk3ZC1jNDA0LTQ4OWItYjY4MS0yYWM3MTYzNzE1MWQiLCJsYWJlbCI6Imlzc3VlciIsImFjY2VwdCI6WyJkaWRjb21tL2FpcDEiLCJkaWRjb21tL2FpcDI7ZW52PXJmYzE5Il0sImhhbmRzaGFrZV9wcm90b2NvbHMiOlsiaHR0cHM6Ly9kaWRjb21tLm9yZy9kaWRleGNoYW5nZS8xLjAiLCJodHRwczovL2RpZGNvbW0ub3JnL2Nvbm5lY3Rpb25zLzEuMCJdLCJzZXJ2aWNlcyI6W3siaWQiOiIjaW5saW5lLTAiLCJzZXJ2aWNlRW5kcG9pbnQiOiJodHRwOi8vbG9jYWxob3N0OjkwMDAiLCJ0eXBlIjoiZGlkLWNvbW11bmljYXRpb24iLCJyZWNpcGllbnRLZXlzIjpbImRpZDprZXk6ejZNa2VwbXNmdDhNNkJOUXM2SzliNTJjR2tXTWRHQjN6ekZHSk43SGIzdUt3dnpzIl0sInJvdXRpbmdLZXlzIjpbXX1dfQ"
+							"value": "http://localhost:9002?oob=eyJAdHlwZSI6Imh0dHBzOi8vZGlkY29tbS5vcmcvb3V0LW9mLWJhbmQvMS4xL2ludml0YXRpb24iLCJAaWQiOiJiMzc2MGZmOC04YzVjLTQ1OTItYTMzMy03N2FlZDlmODAwNDkiLCJsYWJlbCI6InZlcmlmaWVyIiwiYWNjZXB0IjpbImRpZGNvbW0vYWlwMSIsImRpZGNvbW0vYWlwMjtlbnY9cmZjMTkiXSwiaGFuZHNoYWtlX3Byb3RvY29scyI6WyJodHRwczovL2RpZGNvbW0ub3JnL2RpZGV4Y2hhbmdlLzEuMCIsImh0dHBzOi8vZGlkY29tbS5vcmcvY29ubmVjdGlvbnMvMS4wIl0sInNlcnZpY2VzIjpbeyJpZCI6IiNpbmxpbmUtMCIsInNlcnZpY2VFbmRwb2ludCI6Imh0dHA6Ly9sb2NhbGhvc3Q6OTAwMiIsInR5cGUiOiJkaWQtY29tbXVuaWNhdGlvbiIsInJlY2lwaWVudEtleXMiOlsiZGlkOmtleTp6Nk1rbmFLdGpyblpacFNwbnF1NnVMRHJYNTFob01jSnN4Rm94dWNNV3hTUDZoSkYiXSwicm91dGluZ0tleXMiOltdfV19"
 						}
 					]
 				}
@@ -88,21 +88,21 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:{{holder_app_port}}/session/credential/accept?credential-id",
+					"raw": "http://localhost:{{holder_app_port}}/holder/credential/accept?credential-id=d264ab03-a435-4a48-9493-ecb33e0874cf",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "{{holder_app_port}}",
 					"path": [
-						"session",
+						"holder",
 						"credential",
 						"accept"
 					],
 					"query": [
 						{
 							"key": "credential-id",
-							"value": null
+							"value": "d264ab03-a435-4a48-9493-ecb33e0874cf"
 						}
 					]
 				}
@@ -115,21 +115,21 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:{{holder_app_port}}/session/proof/accept?proof-id",
+					"raw": "http://localhost:{{holder_app_port}}/holder/proof/accept?proof-id=c45a41f3-63a5-49d9-83ba-6f0628682dbc",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "{{holder_app_port}}",
 					"path": [
-						"session",
+						"holder",
 						"proof",
 						"accept"
 					],
 					"query": [
 						{
 							"key": "proof-id",
-							"value": null
+							"value": "c45a41f3-63a5-49d9-83ba-6f0628682dbc"
 						}
 					]
 				}

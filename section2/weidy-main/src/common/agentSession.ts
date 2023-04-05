@@ -1,5 +1,5 @@
 import { Agent, InitConfig, WalletConfig, IndyPoolConfig, AutoAcceptCredential, HttpOutboundTransport, 
-    WsOutboundTransport, ConnectionStateChangedEvent, ConnectionEventTypes, DidExchangeState } from '@aries-framework/core';
+    WsOutboundTransport, ConnectionStateChangedEvent, ConnectionEventTypes, DidExchangeState, CredentialStateChangedEvent, CredentialEventTypes, CredentialState, ProofStateChangedEvent, ProofEventTypes, ProofState } from '@aries-framework/core';
 import { agentDependencies, HttpInboundTransport } from "@aries-framework/node";
 import { AgentData } from './agentData';
 
@@ -50,6 +50,25 @@ export class AgentSession {
             }
         );
 
+        this.agent.events.on<CredentialStateChangedEvent>(
+            CredentialEventTypes.CredentialStateChanged,
+            async ({ payload }) => {
+              if (payload.credentialRecord.state === CredentialState.OfferReceived) {
+                console.log(`Credential received:`, payload);
+                this.agentData.credentialId = payload.credentialRecord.id;
+              }
+            },
+          );
+
+          this.agent.events.on<ProofStateChangedEvent>(
+            ProofEventTypes.ProofStateChanged,
+            async ({ payload }) => {
+              if (payload.proofRecord.state === ProofState.RequestReceived) {
+                console.log(`Proof Request received:`, payload);
+                this.agentData.proofId = payload.proofRecord.id;
+              }
+            },
+          );
     }
 
     public async login() {
