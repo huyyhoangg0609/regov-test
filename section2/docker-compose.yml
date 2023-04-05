@@ -1,4 +1,4 @@
-version: '2'
+version: '1'
 services:
   issuer:
     build:
@@ -15,7 +15,7 @@ services:
     container_name: holder-agent
     ports:
       - 9001:9000
-      - 8081:8888
+      - 8881:8888
 
   verifier:
     build:
@@ -24,7 +24,7 @@ services:
     container_name: verifier-agent
     ports:
       - 9002:9000
-      - 8082:8888
+      - 8882:8888
     
 
 
