@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "75736f04-1aa6-45cc-b16b-433f7ae15f98",
+		"name": "Verifier",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15083536"
+	},
+	"item": [
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{verifier_app_port}}/session/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{verifier_app_port}}",
+					"path": [
+						"session",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "08-Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"walletId\":\"verifier-wallet-id\",\n    \"walletKey\":\"verifier-wallet-key\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:{{verifier_app_port}}/session/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{verifier_app_port}}",
+					"path": [
+						"session",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "09-Create Invitation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{verifier_app_port}}/session/invitation/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{verifier_app_port}}",
+					"path": [
+						"session",
+						"invitation",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11-Create & Send Proof",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{verifier_app_port}}/request/create?cred-def-id=123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{verifier_app_port}}",
+					"path": [
+						"request",
+						"create"
+					],
+					"query": [
+						{
+							"key": "cred-def-id",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "13-Verify Proof",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{verifier_app_port}}/proof/verify?proof-id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{verifier_app_port}}",
+					"path": [
+						"proof",
+						"verify"
+					],
+					"query": [
+						{
+							"key": "proof-id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

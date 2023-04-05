@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "598f958b-d107-4c35-a18f-789f47cef3a4",
+		"name": "Issuer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15083536"
+	},
+	"item": [
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{issuer_app_port}}/session/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{issuer_app_port}}",
+					"path": [
+						"session",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "01-Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"walletId\":\"issuer-wallet-id\",\n    \"walletKey\":\"issuer-wallet-key\",\n    \"seed\":\"demoissuerdidseed000000000000000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:{{issuer_app_port}}/session/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{issuer_app_port}}",
+					"path": [
+						"session",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03-Create Schema",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"schema-1\",\n    \"version\":1.0,\n    \"attributes\":[\"name\",\"age\",\"country\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:{{issuer_app_port}}/issuer/schema/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{issuer_app_port}}",
+					"path": [
+						"issuer",
+						"schema",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04-Create Invitation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{issuer_app_port}}/session/invitation/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{issuer_app_port}}",
+					"path": [
+						"session",
+						"invitation",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "06-Create & Offer Creadential",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"thomas\",\n    \"age\":\"30\",\n    \"country\":\"vietnam\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:{{issuer_app_port}}/issuer/credential/offer?cred-def-id=LJk1HdDk7uYj6aZb9qWuHF:2:schema-1:1.0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{issuer_app_port}}",
+					"path": [
+						"issuer",
+						"credential",
+						"offer"
+					],
+					"query": [
+						{
+							"key": "cred-def-id",
+							"value": "LJk1HdDk7uYj6aZb9qWuHF:2:schema-1:1.0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

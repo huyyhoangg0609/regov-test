@@ -1,0 +1,1 @@
+{"version":3,"file":"ledger.config.js","sourceRoot":"","sources":["../../src/common/ledger.config.ts"],"names":[],"mappings":";;;AACA,MAAM,iBAAiB,GAAG;;;2wBAGivB,CAAA;AAI9vB,QAAA,gBAAgB,GAAG;IAC5B,EAAE,EAAE,kBAAkB;IACtB,YAAY,EAAE,KAAK;IACnB,aAAa,EAAE,cAAc;IAC7B,mBAAmB,EAAE,iBAAiB;CACzC,CAAA"}
