@@ -1,40 +1,50 @@
 import { SchemaTemplate } from '@aries-framework/core';
-import { BadRequestException, Injectable } from '@nestjs/common';
+import { BadRequestException, HttpStatus, Injectable } from '@nestjs/common';
 
 import { AgentSession } from '../session/entity/agentSession';
 import { CredentialBody } from './dto/credentialBody.dto';
-import { SchemaInput } from './dto/schemaInput.dto';
+import { CreateSchemaDto } from './dto/createSchema.dto';
+import { CreateSchemaStatus } from 'src/common/schema/createStatus.schema';
 
 
 @Injectable()
 export class IssuerService {
 
-    public async createCredCredentialSchemaAndDef(issuer: AgentSession, schemaInput: SchemaInput): Promise<any> {
+    public async createCredCredentialSchemaAndDef(issuer: AgentSession, schemaDto: CreateSchemaDto): Promise<any> {
+        console.log("Creating Schema...");
         if (!issuer) {
             throw new BadRequestException('Please login first.')
         }
-        console.log(schemaInput.name)
         const schemaTemplate: SchemaTemplate = {
-            name: schemaInput.name,
-            version: '1.2',
-            attributes: ['name', 'age', 'country'],
+            name: schemaDto.name,
+            version: schemaDto.version,
+            attributes: schemaDto.attributes,
         };
-        const schema = await issuer.agent.ledger.registerSchema(schemaTemplate).catch(e => {
-            throw new BadRequestException(e)
-        });
-        const schemaDef = await issuer.agent.ledger.registerCredentialDefinition({
+        const schema = await issuer.agent.ledger.registerSchema(schemaTemplate);
+        console.log("Schema: ", schema);
+
+        const schemaDef: any = await issuer.agent.ledger.registerCredentialDefinition({
             schema: schema,
             tag: 'CI1',
             supportRevocation: false,
-        }).catch(e => {
-            throw new BadRequestException(e)
+        }).catch(() => {
+           throw new BadRequestException("Schema already existed!");
         });
-
-        issuer.agentData.credDefId = schemaDef.id
-        console.log('Storing cred defs: ', schema.id, schemaDef.id)
-        return {
-            schema,
-            schemaDef,
+             
+        issuer.agentData.credDefId = schemaDef.id;
+        return { 
+            schema: {
+                id: schema.id,
+                name: schema.name,
+                version: schema.version,
+                attributes: schema.attrNames
+            },
+            schemaDef: {
+                id: schemaDef.id,
+                version: schemaDef.ver,
+                type: schemaDef.type,
+                tag: schemaDef.tag,
+            }
         };
     }
 

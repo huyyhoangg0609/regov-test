@@ -1,6 +1,6 @@
 import { IsString, IsNotEmpty } from 'class-validator';
 
-export class SchemaInput {
+export class CreateSchemaDto {
     @IsString()
     @IsNotEmpty()
     name: string;

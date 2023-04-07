@@ -1,0 +1,5 @@
+export enum CreateSchemaStatus {
+    SUCCESS="CREATE SCHEMA SUCCESS",
+    FAIL="CREATE SCHEMA FAIL",
+    EXISTED="SCHEMA IS EXISTED"
+}

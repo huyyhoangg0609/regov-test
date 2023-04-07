@@ -2,9 +2,8 @@ import { Body, Controller, HttpException, HttpStatus, Post, Query } from '@nestj
 
 import { IssuerService } from './issuer.service';
 import { SessionService } from '../session/session.service';
-
 import { CredentialBody } from './dto/credentialBody.dto';
-import { SchemaInput } from './dto/schemaInput.dto';
+import { CreateSchemaDto } from './dto/createSchema.dto';
 
 
 @Controller('issuer')
@@ -15,8 +14,7 @@ export class IssuerController {
     ) {}
 
     @Post('/schema/create')
-    public async createSchema(@Body() schema: SchemaInput) {
-        console.log("Creating Schema...");
+    public async createSchema(@Body() schema: CreateSchemaDto) {
         return await this.issuerService.createCredCredentialSchemaAndDef(this.sessionService.session, schema);
     }
 
