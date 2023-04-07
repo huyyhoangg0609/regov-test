@@ -9,8 +9,6 @@ npm run start:dev:holder      # run as holder
 npm run start:dev:verifier    # run as verifier
 ```
 
-Import this [postman file](./regov-test.postman_collection.json) to use the apis
-
 ## Workflow
 
 ### Issuing Identity
