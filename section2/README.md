@@ -38,3 +38,9 @@ Import this [postman file](./regov-test.postman_collection.json) to use the apis
 4. Holder build proof from credentials & send the proof to Verifier via the connection
 
 5. Verifier can views & verify the proof
+
+
+### Testing APIs using Postman
+1. Open Postman
+2. Select import files <actor-name>.postman_collection.json
+3. Run APIs in order start from 01-Login in Issuer Collection
