@@ -16,7 +16,7 @@ async function bootstrap() {
   
   const PORT = process.env.PORT ? parseInt(process.env.PORT): 8888;
   await app.listen(PORT);
-  console.log('RUNNING ON PORT: ' + process.env.PORT);
+  console.log('RUNNING ON PORT:', process.env.PORT);
   console.log('You are '+ process.env.ACTOR +'!');
 
 }

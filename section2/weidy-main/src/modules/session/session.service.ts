@@ -3,6 +3,7 @@ import {  WalletConfig } from '@aries-framework/core';
 
 import { ledgerPoolConfig } from 'src/common/ledger.config';
 import { AgentSession } from './entity/agentSession';
+import { ConnectionStatus } from 'src/common/connection/status.connection';
 
 @Injectable()
 export class SessionService {
@@ -41,6 +42,7 @@ export class SessionService {
 
     // *********************************************IMPORTANT*****************************************
     async createInvitation() {
+        console.log("Creating invitation...")
         const invitation = await this.session.agent.oob.createInvitation();
         const domain = `http://localhost:${this.session.agentPort}`;
         const invitationUrl = invitation.outOfBandInvitation.toUrl({ domain });
@@ -59,10 +61,24 @@ export class SessionService {
     }
 
     async acceptInvitation(invitationUrl: string) {
+        console.log("Accepting Invitation...")
         const invitation = await this.session.agent.oob.receiveInvitationFromUrl(invitationUrl);
-        return {invitation: invitation};
+        return { 
+            statusCode: HttpStatus.OK,
+            message: {
+                connectionRecord: {
+                    id: invitation.connectionRecord.id,
+                    status: (
+                        invitation.connectionRecord.state === "request-sent" ? ConnectionStatus.SUCCESS : ConnectionStatus.FAIL
+                    ),
+                    protocol: invitation.connectionRecord.protocol,
+                    autoAcceptConnection: invitation.connectionRecord.autoAcceptConnection,
+                    createdAt: invitation.connectionRecord.createdAt
+                }
+            }
+        };
     }
-    // *********************************************IMPORTANT*****************************************
+
 
 
 

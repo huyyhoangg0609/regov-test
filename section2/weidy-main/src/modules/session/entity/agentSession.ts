@@ -72,7 +72,7 @@ export class AgentSession {
     }
 
     public async login() {
-        console.log("Agent Session is running on port: "+ this.agentPort);
+        console.log("Agent Session is running on port:", this.agentPort);
         const result = await this.agent.initialize();
         return result;
     }
@@ -83,4 +83,5 @@ export class AgentSession {
         return await this.agent.shutdown();
     }
     
+
 }
