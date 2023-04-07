@@ -83,7 +83,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\":\"schema-2\",\n    \"version\":1.1,\n    \"attributes\":[\"name\",\"age\",\"country\"]\n}",
+					"raw": "{\n    \"name\":\"schema-6\",\n    \"version\": \"1.4\",\n    \"attributes\":[\"name\",\"age\",\"country\"]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -121,7 +121,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:{{issuer_app_port}}/issuer/credential/offer?cred-def-id=LJk1HdDk7uYj6aZb9qWuHF:3:CL:753740:CI1",
+					"raw": "http://localhost:{{issuer_app_port}}/issuer/credential/create?cred-def-id=LJk1HdDk7uYj6aZb9qWuHF:3:CL:758490:CI1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -130,12 +130,12 @@
 					"path": [
 						"issuer",
 						"credential",
-						"offer"
+						"create"
 					],
 					"query": [
 						{
 							"key": "cred-def-id",
-							"value": "LJk1HdDk7uYj6aZb9qWuHF:3:CL:753740:CI1"
+							"value": "LJk1HdDk7uYj6aZb9qWuHF:3:CL:758490:CI1"
 						}
 					]
 				}

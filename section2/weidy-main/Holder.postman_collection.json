@@ -61,7 +61,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:{{holder_app_port}}/session/invitation/accept?invitation-url=http://localhost:9002?oob=eyJAdHlwZSI6Imh0dHBzOi8vZGlkY29tbS5vcmcvb3V0LW9mLWJhbmQvMS4xL2ludml0YXRpb24iLCJAaWQiOiJiMzc2MGZmOC04YzVjLTQ1OTItYTMzMy03N2FlZDlmODAwNDkiLCJsYWJlbCI6InZlcmlmaWVyIiwiYWNjZXB0IjpbImRpZGNvbW0vYWlwMSIsImRpZGNvbW0vYWlwMjtlbnY9cmZjMTkiXSwiaGFuZHNoYWtlX3Byb3RvY29scyI6WyJodHRwczovL2RpZGNvbW0ub3JnL2RpZGV4Y2hhbmdlLzEuMCIsImh0dHBzOi8vZGlkY29tbS5vcmcvY29ubmVjdGlvbnMvMS4wIl0sInNlcnZpY2VzIjpbeyJpZCI6IiNpbmxpbmUtMCIsInNlcnZpY2VFbmRwb2ludCI6Imh0dHA6Ly9sb2NhbGhvc3Q6OTAwMiIsInR5cGUiOiJkaWQtY29tbXVuaWNhdGlvbiIsInJlY2lwaWVudEtleXMiOlsiZGlkOmtleTp6Nk1rbmFLdGpyblpacFNwbnF1NnVMRHJYNTFob01jSnN4Rm94dWNNV3hTUDZoSkYiXSwicm91dGluZ0tleXMiOltdfV19",
+					"raw": "http://localhost:{{holder_app_port}}/session/invitation/accept?invitation-url=http://localhost:9000?oob=eyJAdHlwZSI6Imh0dHBzOi8vZGlkY29tbS5vcmcvb3V0LW9mLWJhbmQvMS4xL2ludml0YXRpb24iLCJAaWQiOiIxZjdlOWM3MC1jYjQxLTRiOGYtOTM0My1mOWE3YTA0M2FhNWIiLCJsYWJlbCI6Imlzc3VlciIsImFjY2VwdCI6WyJkaWRjb21tL2FpcDEiLCJkaWRjb21tL2FpcDI7ZW52PXJmYzE5Il0sImhhbmRzaGFrZV9wcm90b2NvbHMiOlsiaHR0cHM6Ly9kaWRjb21tLm9yZy9kaWRleGNoYW5nZS8xLjAiLCJodHRwczovL2RpZGNvbW0ub3JnL2Nvbm5lY3Rpb25zLzEuMCJdLCJzZXJ2aWNlcyI6W3siaWQiOiIjaW5saW5lLTAiLCJzZXJ2aWNlRW5kcG9pbnQiOiJodHRwOi8vbG9jYWxob3N0OjkwMDAiLCJ0eXBlIjoiZGlkLWNvbW11bmljYXRpb24iLCJyZWNpcGllbnRLZXlzIjpbImRpZDprZXk6ejZNa3JwRmR3bXU4QlUxSnR4QU5QeFJtYWZQQXVVS0J6TkpObzd5SEszdEt2RTV0Il0sInJvdXRpbmdLZXlzIjpbXX1dfQ",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -75,7 +75,7 @@
 					"query": [
 						{
 							"key": "invitation-url",
-							"value": "http://localhost:9002?oob=eyJAdHlwZSI6Imh0dHBzOi8vZGlkY29tbS5vcmcvb3V0LW9mLWJhbmQvMS4xL2ludml0YXRpb24iLCJAaWQiOiJiMzc2MGZmOC04YzVjLTQ1OTItYTMzMy03N2FlZDlmODAwNDkiLCJsYWJlbCI6InZlcmlmaWVyIiwiYWNjZXB0IjpbImRpZGNvbW0vYWlwMSIsImRpZGNvbW0vYWlwMjtlbnY9cmZjMTkiXSwiaGFuZHNoYWtlX3Byb3RvY29scyI6WyJodHRwczovL2RpZGNvbW0ub3JnL2RpZGV4Y2hhbmdlLzEuMCIsImh0dHBzOi8vZGlkY29tbS5vcmcvY29ubmVjdGlvbnMvMS4wIl0sInNlcnZpY2VzIjpbeyJpZCI6IiNpbmxpbmUtMCIsInNlcnZpY2VFbmRwb2ludCI6Imh0dHA6Ly9sb2NhbGhvc3Q6OTAwMiIsInR5cGUiOiJkaWQtY29tbXVuaWNhdGlvbiIsInJlY2lwaWVudEtleXMiOlsiZGlkOmtleTp6Nk1rbmFLdGpyblpacFNwbnF1NnVMRHJYNTFob01jSnN4Rm94dWNNV3hTUDZoSkYiXSwicm91dGluZ0tleXMiOltdfV19"
+							"value": "http://localhost:9000?oob=eyJAdHlwZSI6Imh0dHBzOi8vZGlkY29tbS5vcmcvb3V0LW9mLWJhbmQvMS4xL2ludml0YXRpb24iLCJAaWQiOiIxZjdlOWM3MC1jYjQxLTRiOGYtOTM0My1mOWE3YTA0M2FhNWIiLCJsYWJlbCI6Imlzc3VlciIsImFjY2VwdCI6WyJkaWRjb21tL2FpcDEiLCJkaWRjb21tL2FpcDI7ZW52PXJmYzE5Il0sImhhbmRzaGFrZV9wcm90b2NvbHMiOlsiaHR0cHM6Ly9kaWRjb21tLm9yZy9kaWRleGNoYW5nZS8xLjAiLCJodHRwczovL2RpZGNvbW0ub3JnL2Nvbm5lY3Rpb25zLzEuMCJdLCJzZXJ2aWNlcyI6W3siaWQiOiIjaW5saW5lLTAiLCJzZXJ2aWNlRW5kcG9pbnQiOiJodHRwOi8vbG9jYWxob3N0OjkwMDAiLCJ0eXBlIjoiZGlkLWNvbW11bmljYXRpb24iLCJyZWNpcGllbnRLZXlzIjpbImRpZDprZXk6ejZNa3JwRmR3bXU4QlUxSnR4QU5QeFJtYWZQQXVVS0J6TkpObzd5SEszdEt2RTV0Il0sInJvdXRpbmdLZXlzIjpbXX1dfQ"
 						}
 					]
 				}
@@ -88,7 +88,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:{{holder_app_port}}/holder/credential/accept?credential-id=d264ab03-a435-4a48-9493-ecb33e0874cf",
+					"raw": "http://localhost:{{holder_app_port}}/holder/credential/accept?credential-id=a4a40b3e-40e7-421a-b23c-02368e052457",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -102,7 +102,34 @@
 					"query": [
 						{
 							"key": "credential-id",
-							"value": "d264ab03-a435-4a48-9493-ecb33e0874cf"
+							"value": "a4a40b3e-40e7-421a-b23c-02368e052457"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7.1-Decline Credential",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{holder_app_port}}/holder/credential/decline?credential-id=59fc367d-7f36-4738-ac3f-ecd48ab83765",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{holder_app_port}}",
+					"path": [
+						"holder",
+						"credential",
+						"decline"
+					],
+					"query": [
+						{
+							"key": "credential-id",
+							"value": "59fc367d-7f36-4738-ac3f-ecd48ab83765"
 						}
 					]
 				}
