@@ -10,7 +10,8 @@ export class SessionService {
     public session: AgentSession;
     public isLogin: boolean;
 
-    async login(walletId: string, walletKey: string, seed?: string) { 
+    async login(walletId: string, walletKey: string, seed?: string) {
+        console.log("Logining...");
         if (this.isLogin) {
             return {statusCode: HttpStatus.OK, message: "You have already login!!!"}
         }
@@ -21,8 +22,6 @@ export class SessionService {
             id: walletId,
             key: walletKey, 
         }
-        console.log("WalletID: "+ walletConfig.id);
-
         // START SESSION
         const newSession = new AgentSession(agentPort, process.env.ACTOR, walletConfig, ledgerPoolConfig, seed);
         this.session = newSession;
@@ -44,10 +43,19 @@ export class SessionService {
     async createInvitation() {
         const invitation = await this.session.agent.oob.createInvitation();
         const domain = `http://localhost:${this.session.agentPort}`;
-        return {
-            invitationUrl: invitation.outOfBandInvitation.toUrl({ domain }),
-            invitation
-        };
+        const invitationUrl = invitation.outOfBandInvitation.toUrl({ domain });
+        return { 
+            statusCode: HttpStatus.CREATED,
+            message: {
+                invitationUrl,
+                invitation: {
+                    id: invitation.id,
+                    label: invitation.outOfBandInvitation.label,
+                    state: invitation.state,
+                    reuable: invitation.reusable
+                }
+            }
+        }; 
     }
 
     async acceptInvitation(invitationUrl: string) {
