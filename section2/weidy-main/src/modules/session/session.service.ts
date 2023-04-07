@@ -1,8 +1,8 @@
 import { Injectable, HttpStatus } from '@nestjs/common';
 import {  WalletConfig } from '@aries-framework/core';
 
-import { AgentSession } from 'src/common/agentSession';
 import { ledgerPoolConfig } from 'src/common/ledger.config';
+import { AgentSession } from './entity/agentSession';
 
 @Injectable()
 export class SessionService {

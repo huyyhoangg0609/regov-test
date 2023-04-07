@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { AgentSession } from 'src/common/agentSession';
+import { AgentSession } from '../session/entity/agentSession';
+
 
 @Injectable()
 export class VerifierService{

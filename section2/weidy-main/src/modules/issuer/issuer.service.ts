@@ -1,6 +1,7 @@
 import { SchemaTemplate } from '@aries-framework/core';
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { AgentSession } from 'src/common/agentSession';
+
+import { AgentSession } from '../session/entity/agentSession';
 import { CredentialBody } from './dto/credentialBody.dto';
 import { SchemaInput } from './dto/schemaInput.dto';
 

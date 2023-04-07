@@ -1,7 +1,8 @@
 import { Body, Controller, Post, Query } from '@nestjs/common';
 
 import { SessionService } from './session.service';
-import { LoginWalletDto } from 'src/common/dtos/loginWallet.dto';
+import { LoginDto } from './dto/login.dto';
+
 
 @Controller('/session')
 export class SessionController {
@@ -9,7 +10,7 @@ export class SessionController {
 
 
     @Post('/login')
-    public async login(@Body() keyDto: LoginWalletDto) {
+    public async login(@Body() keyDto: LoginDto) {
         return await this.sessionService.login(keyDto.walletId,keyDto.walletKey, keyDto.seed);
     }
 
