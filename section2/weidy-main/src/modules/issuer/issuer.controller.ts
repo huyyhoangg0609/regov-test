@@ -2,7 +2,7 @@ import { Body, Controller, HttpException, HttpStatus, Post, Query } from '@nestj
 
 import { IssuerService } from './issuer.service';
 import { SessionService } from '../session/session.service';
-import { CredentialBody } from './dto/credentialBody.dto';
+import { CreateCredential } from './dto/createCredential.dto';
 import { CreateSchemaDto } from './dto/createSchema.dto';
 
 
@@ -18,8 +18,8 @@ export class IssuerController {
         return await this.issuerService.createCredCredentialSchemaAndDef(this.sessionService.session, schema);
     }
 
-    @Post('/credential/offer')
-    public async offerCredential(@Body() input: CredentialBody, @Query('cred-def-id') credDefId?: string) {
+    @Post('/credential/create')
+    public async createCredential(@Body() input: CreateCredential, @Query('cred-def-id') credDefId?: string) {
         return await this.issuerService.offerCredential(this.sessionService.session, input, credDefId);
     }
 

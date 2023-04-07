@@ -1,10 +1,10 @@
 import { SchemaTemplate } from '@aries-framework/core';
 import { BadRequestException, HttpStatus, Injectable } from '@nestjs/common';
+import { CreateSchemaStatus } from 'src/common/schema/createStatus.schema';
 
 import { AgentSession } from '../session/entity/agentSession';
-import { CredentialBody } from './dto/credentialBody.dto';
+import { CreateCredential } from './dto/createCredential.dto';
 import { CreateSchemaDto } from './dto/createSchema.dto';
-import { CreateSchemaStatus } from 'src/common/schema/createStatus.schema';
 
 
 @Injectable()
@@ -48,15 +48,10 @@ export class IssuerService {
         };
     }
 
-
-    public async offerCredential(issuer: AgentSession, payload: CredentialBody, credDefId?: string) {
+    public async offerCredential(issuer: AgentSession, payload: CreateCredential, credDefId?: string) {
         console.log("Creating credentail...")
-        console.log("Connection ID: "+ issuer.agentData.connectionId);
-        console.log("Credential Def ID: "+ credDefId)
-        console.log(payload);
-        console.log("Agent Port:" + issuer.agentPort);
-
-        return await issuer.agent.credentials.offerCredential({
+        console.log("Information: ", payload);
+        const result = await issuer.agent.credentials.offerCredential({
             protocolVersion: 'v1',
             connectionId: issuer.agentData.connectionId,
             credentialFormats: {
@@ -70,8 +65,19 @@ export class IssuerService {
                 },
             },
         });
+        const status = (result.state === 'offer-sent') ? CreateSchemaStatus.SUCCESS : CreateSchemaStatus.FAIL;
+        console.log('Create creadential status:', status);
+        return { 
+            statusCode: HttpStatus.CREATED,
+            message: {
+                credential: {
+                    id: result.id,
+                    status: status,
+                    createdAt: result.createdAt,
+                    attributes: result.credentialAttributes
+                },
+            }
+        };
     }
 
-
-    
 }
