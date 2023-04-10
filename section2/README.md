@@ -40,5 +40,5 @@ npm run start:dev:verifier    # run as verifier
 
 ### Testing APIs using Postman
 1. Open Postman
-2. Select import files <actor-name>.postman_collection.json
-3. Run APIs in order start from 01-Login in Issuer Collection
+2. Select import files name <actor-name>.postman_collection.json in the following path: regov-test/section2/weidy-main
+3. Run APIs in order start from 01-Login in Issuer's Collection
