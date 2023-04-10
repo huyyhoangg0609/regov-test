@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "75736f04-1aa6-45cc-b16b-433f7ae15f98",
+		"_postman_id": "3d07f95d-ce5c-43ab-9623-2747e66e19db",
 		"name": "Verifier",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "15083536"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -12,12 +11,12 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:{{verifier_app_port}}/session/logout",
+					"raw": "http://localhost:8882/session/logout",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "{{verifier_app_port}}",
+					"port": "8882",
 					"path": [
 						"session",
 						"logout"
@@ -41,12 +40,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:{{verifier_app_port}}/session/login",
+					"raw": "http://localhost:8882/session/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "{{verifier_app_port}}",
+					"port": "8882",
 					"path": [
 						"session",
 						"login"
@@ -61,12 +60,12 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:{{verifier_app_port}}/session/invitation/create",
+					"raw": "http://localhost:8882/session/invitation/create",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "{{verifier_app_port}}",
+					"port": "8882",
 					"path": [
 						"session",
 						"invitation",
@@ -82,12 +81,12 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:{{verifier_app_port}}/verifier/request/create?cred-def-id=LJk1HdDk7uYj6aZb9qWuHF:3:CL:753740:CI1",
+					"raw": "http://localhost:8882/verifier/request/create?cred-def-id=LJk1HdDk7uYj6aZb9qWuHF:3:CL:753740:CI1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "{{verifier_app_port}}",
+					"port": "8882",
 					"path": [
 						"verifier",
 						"request",
@@ -109,12 +108,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:{{verifier_app_port}}/verifier/proof/verify?proof-id=",
+					"raw": "http://localhost:8882/verifier/proof/verify?proof-id=",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "{{verifier_app_port}}",
+					"port": "8882",
 					"path": [
 						"verifier",
 						"proof",
